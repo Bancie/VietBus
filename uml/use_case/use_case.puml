@@ -1,0 +1,18 @@
+left to right direction
+actor "Tài xế" as tx
+actor "Nhà trường (quản lý)" as nt
+actor "Học sinh" as hs
+actor "Phụ huynh" as phs
+
+rectangle "Hệ thống đưa đón" {
+    usecase "Tracking học sinh" as UC1
+    usecase "Gửi thông báo cho PH" as UC2
+}
+
+rectangle "Hệ thống Bus Schedule & Tracking" {
+}
+
+rectangle "Hệ thống "
+
+tx --> UC1
+tx --> UC2

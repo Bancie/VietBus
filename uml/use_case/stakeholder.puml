@@ -1,0 +1,30 @@
+@startuml
+title Stakeholders of Bus Software
+
+skinparam rectangle {
+  BorderColor black
+  BackgroundColor white
+}
+
+partition " " {
+  partition "Internal - Operational" {
+    :Bus attendants;
+    :Dispatch staff;
+    :Technicians / Maintenance;
+  }
+  partition "Internal - Executive" {
+    :School administrators;
+    :Transportation dept. head;
+  }
+}
+partition " " {
+  partition "External - Operational" {
+    :Bus contractors;
+    :Parents & Students;
+  }
+  partition "External - Executive" {
+    :School board / Funding authority;
+    :Government regulators;
+  }
+}
+@enduml
