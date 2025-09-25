@@ -1,4 +1,5 @@
 @startuml
+title Sơ đồ use case toàn hệ thống
 left to right direction
 actor "Tài xế" as tx
 actor "Quản lý xe buýt" as ql

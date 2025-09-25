@@ -1,4 +1,5 @@
 @startuml
+title Sơ đồ use case riêng (phụ huynh)
 left to right direction
 actor "Phụ huynh" as ph
 
