@@ -31,13 +31,16 @@ rectangle "Bus Schedule & Tracking" {
     usecase "Chọn xe buýt" as UC23
     usecase "Lưu & đồng bộ phân công" as UC24
     usecase "Lựa chọn" as UC25
+    usecase "Cập nhật thay đổi" as UC26
+    usecase "Xác định xe buýt cần theo dõi" as UC27
+    usecase "Truy xuất dữ liệu GPS xe buýt" as UC28
+    usecase "Xem thông tin hành trình" as UC29
 
-    UC3 ..> UC25
-    UC3 ..> UC24
-    UC25 ..> UC21
-    UC25 ..> UC22
-    UC25 ..> UC23
-
+    UC3 ..> UC25 : <<include>>
+    UC3 ..> UC24 : <<include>>
+    UC25 ...> UC21 : <<include>>
+    UC25 ...> UC22 : <<include>>
+    UC25 ...> UC23 : <<include>>
 
     UC1 ..> UC8 : <<include>>
     UC1 ..> UC9 : <<include>>
@@ -54,6 +57,11 @@ rectangle "Bus Schedule & Tracking" {
     UC2 ..> UC_Update : <<include>>
     UC2 ..> UC_Save : <<include>>
     UC2 ..> UC15 : <<include>>
+
+    UC3 ..> UC26 : <<include>>
+    UC5 ..> UC27 : <<include>>
+    UC5 ..> UC28 : <<include>>
+    UC5 ..> UC29 : <<include>>
 
 }
 
