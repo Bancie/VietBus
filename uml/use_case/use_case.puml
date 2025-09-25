@@ -1,18 +1,33 @@
+@startuml
 left to right direction
 actor "Tài xế" as tx
-actor "Nhà trường (quản lý)" as nt
-actor "Học sinh" as hs
-actor "Phụ huynh" as phs
+actor "Quản lý xe buýt" as ql
+actor "Phụ huynh" as ph
 
-rectangle "Hệ thống đưa đón" {
-    usecase "Tracking học sinh" as UC1
-    usecase "Gửi thông báo cho PH" as UC2
+rectangle "Bus Schedule & Tracking" {
+    usecase "Xem danh sách tổng quan" as UC1
+    usecase "Tạo và cập nhật lịch trình" as UC2
+    usecase "Phân công" as UC3
+    usecase "Gửi tin nhắn" as UC4
+    usecase "Theo dõi" as UC5
+    usecase "Xem lịch làm việc" as UC6
+    usecase "Xem danh sách điểm đón" as UC7
+    usecase "Báo cáo tình trạng đón/trả" as UC8
+    usecase "Gửi thông báo sự cố" as UC9
+    usecase "Nhận thông báo" as UC10
 }
 
-rectangle "Hệ thống Bus Schedule & Tracking" {
-}
+ql --> UC1
+ql --> UC2
+ql --> UC3
+ql --> UC4
+ql --> UC5
 
-rectangle "Hệ thống "
+tx --> UC6
+tx --> UC7
+tx --> UC8
+tx --> UC9
 
-tx --> UC1
-tx --> UC2
+UC10 <-- ph
+UC5 <-- ph
+@enduml
