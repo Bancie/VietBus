@@ -3,37 +3,32 @@
   "version": "1.0.0",
   "description": "",
   "keywords": [],
-  "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
-    "@babel/preset-env": "^7.28.3",
-    "core-js": "^3.45.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "regenerator-runtime": "^0.14.1"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3",
     "@babel/preset-react": "^7.27.1",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^28.0.6",
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-replace": "^6.0.2",
-    "postcss": "8.1",
+    "postcss": "^8.1",
     "rollup": "^4.52.4",
     "rollup-plugin-livereload": "^2.0.5",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-serve": "^3.0.0"
   },
   "main": "public/index.js",
-  "style": "public/styles.css",
   "files": [
     "public"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "rollup -c -w",
-    "build": "rollup"
+    "start": "NODE_ENV=development rollup -c -w",
+    "build": "NODE_ENV=production rollup -c"
   }
 }

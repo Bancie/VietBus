@@ -1,10 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import HelloWorld from './component/HelloWorld';
+import { createRoot } from 'react-dom/client';
+import HelloWorld from './component/HelloWorld.js';
 
-ReactDOM.render(
-   <React.StrictMode>
-      <HelloWorld />
-   </React.StrictMode>,
-   document.getElementById('root')
+const root = createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <HelloWorld />
+  </React.StrictMode>
 );
