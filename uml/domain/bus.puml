@@ -2,13 +2,15 @@
 ' Entity
 entity Driver {
     - String id
-    -String name
+    - String name
 }
 
 entity Student {
     - String id
-    -String name
+    - String name
 }
+
+
 
 abstract SendNotice {
     +SendNotice()

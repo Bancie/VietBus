@@ -1,0 +1,62 @@
+@startuml
+' Entity
+entity TaiXe {
+    - id
+    - name
+}
+
+entity PhuHuynh {
+    - id
+    - name
+}
+
+entity HocSinh {
+    - id
+    - name
+}
+
+entity LichLamViec {
+
+}
+
+entity DanhSachDon {
+
+}
+
+abstract LichTrinh {
+
+}
+
+entity LichTrinhXe {
+
+}
+
+entity LichTrinhHocSinh {
+
+}
+
+entity Xe {
+    - bienSo
+}
+
+entity PhanCong {
+
+}
+
+' Association
+
+TaiXe"0..*" -- "0..1"LichLamViec : Chua <
+
+LichTrinh <|-- LichTrinhXe
+LichTrinh <|-- LichTrinhHocSinh
+
+HocSinh"0..*" -- "0..1"LichTrinh : Chua <
+HocSinh"0..*" -- "0..1"DanhSachDon : Chua <
+
+Xe"0..*" -- "0..1"LichTrinh : Chua <
+Xe"0..*" -- "0..*"TaiXe : Lai <
+(Xe, TaiXe) . PhanCong
+
+PhuHuynh"1..1" -- "1..*"HocSinh : Co >
+
+@enduml
