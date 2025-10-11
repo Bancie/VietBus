@@ -5,8 +5,8 @@ class HelloWorld extends React.Component {
     let items = [];
     for (let i = 0; i < 10; i++) {
       let row = [];
-      for (let j = 0; j < 10; j++) {
-        row.push(<td key={j}>Côi Khặc!</td>);
+      for (let j = 0; j < 1; j++) {
+        row.push(<td key={j}>Bus Smart 1.0</td>);
       }
       items.push(<tr key={i}>{row}</tr>);
     }

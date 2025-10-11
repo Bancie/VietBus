@@ -43,6 +43,32 @@ entity PhanCong {
 
 }
 
+abstract ThongBao {
+
+}
+
+entity ThongBaoPhuHuynh {
+
+}
+
+entity ThongBaoTaiXe {
+
+}
+
+entity ThongBaoHocSinh {
+
+}
+
+entity LichXeChay {
+
+}
+
+entity LichDonHocSinh {
+
+}
+
+entity TaiXe
+
 ' Association
 
 TaiXe"0..*" -- "0..1"LichLamViec : Chua <
@@ -50,13 +76,22 @@ TaiXe"0..*" -- "0..1"LichLamViec : Chua <
 LichTrinh <|-- LichTrinhXe
 LichTrinh <|-- LichTrinhHocSinh
 
-HocSinh"0..*" -- "0..1"LichTrinh : Chua <
+HocSinh"0..*" -- "0..*"LichTrinh : Chua <
 HocSinh"0..*" -- "0..1"DanhSachDon : Chua <
 
-Xe"0..*" -- "0..1"LichTrinh : Chua <
+Xe"0..*" -- "0..*"LichTrinh : Chua <
 Xe"0..*" -- "0..*"TaiXe : Lai <
 (Xe, TaiXe) . PhanCong
 
 PhuHuynh"1..1" -- "1..*"HocSinh : Co >
+
+ThongBao <|-- ThongBaoTaiXe
+ThongBao <|-- ThongBaoPhuHuynh
+ThongBao <|- ThongBaoHocSinh
+ThongBao"0..*" -- "0..*"PhuHuynh : nhan <
+ThongBao"0..*" ---- "0..*"TaiXe : nhan <
+
+(Xe, LichTrinh) . LichXeChay
+(HocSinh, LichTrinh) . LichDonHocSinh
 
 @enduml
