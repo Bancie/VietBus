@@ -24,7 +24,8 @@ entity DanhSachDon {
 }
 
 abstract LichTrinh {
-
+    - thoiGianDi
+    - thoiGianDen
 }
 
 entity LichTrinhXe {
@@ -43,19 +44,16 @@ entity PhanCong {
 
 }
 
-abstract ThongBao {
+abstract Tracking {
+    - hienDien
+    - 
+}
+
+entity TrackingTaiXe {
 
 }
 
-entity ThongBaoPhuHuynh {
-
-}
-
-entity ThongBaoTaiXe {
-
-}
-
-entity ThongBaoHocSinh {
+entity TrackingHocSinh {
 
 }
 
@@ -69,15 +67,26 @@ entity LichDonHocSinh {
 
 entity TaiXe
 
+abstract DiaDiem {
+    - tenDiaDiem
+    - toaDo
+}
+entity DiaDiemRuoc
+entity DiaDiemXuong
+
+entity TaiXeDiaDiem
+
+entity DiaDiemLichTrinh
+
 ' Association
 
 TaiXe"0..*" -- "0..1"LichLamViec : Chua <
 
-LichTrinh <|-- LichTrinhXe
+LichTrinh <|- LichTrinhXe
 LichTrinh <|-- LichTrinhHocSinh
 
 HocSinh"0..*" -- "0..*"LichTrinh : Chua <
-HocSinh"0..*" -- "0..1"DanhSachDon : Chua <
+HocSinh"0..*" - "0..1"DanhSachDon : Chua <
 
 Xe"0..*" -- "0..*"LichTrinh : Chua <
 Xe"0..*" -- "0..*"TaiXe : Lai <
@@ -85,13 +94,20 @@ Xe"0..*" -- "0..*"TaiXe : Lai <
 
 PhuHuynh"1..1" -- "1..*"HocSinh : Co >
 
-ThongBao <|-- ThongBaoTaiXe
-ThongBao <|-- ThongBaoPhuHuynh
-ThongBao <|- ThongBaoHocSinh
-ThongBao"0..*" -- "0..*"PhuHuynh : nhan <
-ThongBao"0..*" ---- "0..*"TaiXe : nhan <
+Tracking <|- TrackingTaiXe
+Tracking <|-- TrackingHocSinh
+Tracking"1..1" -- "0..*"TaiXe : theo doi >
+Tracking"1..1" -- "0..*"HocSinh : theo doi >
 
 (Xe, LichTrinh) . LichXeChay
 (HocSinh, LichTrinh) . LichDonHocSinh
 
+DiaDiem <|- DiaDiemRuoc
+DiaDiem <|-- DiaDiemXuong
+HocSinh"0..*" --- "1..1"DiaDiem : Den >
+TaiXe"0..*" -- "1..*"DiaDiem : Den >
+(DiaDiem, TaiXe) . TaiXeDiaDiem
+
+LichTrinh"0..*" - "0..*"DiaDiem
+(LichTrinh, DiaDiem) . DiaDiemLichTrinh
 @enduml
