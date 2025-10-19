@@ -5,5 +5,6 @@ import {
 } from "@react-router/dev/routes";
 
 export default [
-    index("./routes/index.tsx")
+    index("./routes/index.tsx"),
+    route("taixe", "./routes/TaiXe.tsx")
 ] satisfies RouteConfig;

@@ -1,5 +1,6 @@
 import * as React from "react";
 import stylesHref from "../styles/home.css?url";
+import { NavLink } from "react-router";
 
 export const links = () => [{ rel: "stylesheet", href: stylesHref }];
 
@@ -82,10 +83,12 @@ export default function Home() {
             </button>
 
             <button className="card card-select">
+              <NavLink to="/TaiXe" end>
               <h3>Tài xế</h3>
               <p className="muted">
                 Nhận lộ trình hằng ngày, quản lý điểm đón trả và cập nhật trạng thái chuyến đi.
               </p>
+              </NavLink>
             </button>
 
             <button className="card card-select">
