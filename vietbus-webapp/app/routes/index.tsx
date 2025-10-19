@@ -9,7 +9,7 @@ export default function Home() {
 
   const scrollToFeatures = React.useCallback(() => {
     document.getElementById("features")?.scrollIntoView({ behavior: "smooth" });
-  }, []);
+  }, []); 
 
   return (
     <>
