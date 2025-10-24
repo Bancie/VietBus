@@ -46,7 +46,6 @@ entity PhanCong {
 
 abstract Tracking {
     - hienDien
-    - 
 }
 
 entity TrackingTaiXe {
